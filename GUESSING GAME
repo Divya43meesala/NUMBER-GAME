@@ -1,0 +1,74 @@
+import java.util.Random;
+
+import javax.swing.JOptionPane;
+
+import java.util.Scanner;
+
+public class GUESSINGGAME{
+
+public static void main(String[] args){
+	
+game();
+
+String confirm = JOptionPane.showInputDialog ("IF YOU WANT TO CONTINUE ");
+
+JOptionPane.showMessageDialog(null , confirm);
+
+if ( confirm == "YES"){
+
+game();
+
+}
+else{
+
+System.out.println("------------YOU QUIT THE GAME-------------- ");
+
+}
+}
+
+public static void game(){
+
+int answer ;
+
+double  guess ,limit ;
+
+final int max = 1000;
+
+Random rand = new Random();
+
+answer = rand.nextInt(max);
+
+System.out.println(answer);
+
+/*LIMIT THE NUMBER OF ATTEMPTS */
+
+limit = Integer.parseInt(JOptionPane.showInputDialog("LIMIT NUMBER OF GUESSINGS"));
+
+
+/* ASK THE USER TO ENTER THEIR GUESSING NUMBER */
+
+for(int i=1 ; i<= limit ;i++){
+
+guess = Integer.parseInt(JOptionPane.showInputDialog("ENTER YOUR GUESSING NUMBER "));
+
+
+if(guess == answer){
+
+limit = limit - 1;
+
+System.out.println("YOU ENTERED CORRECT NUMBER");
+
+System.out.println("YOU TOOK "+ i +"ROUNDS");  
+
+
+
+}
+else{
+
+System.out.println("YOU ENTERED INCORRECT ANSWER ");
+
+}}
+
+
+}
+}
